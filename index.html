@@ -1,0 +1,300 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L. N. Solutions | GST, Legal & Business Services</title>
+  <meta name="description" content="L. N. Solutions – GST Registration, GST Filing, Company Formation, Accounting, Audit, Project Report & Bank Finance, Tender (GeM & e-Tender), Legal Consultation." />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{
+      --brand-1:#0b84d8; /* primary blue */
+      --brand-2:#145ea8; /* deep blue */
+      --text-1:#0b2239;  /* dark text */
+      --text-2:#3a4a5a;  /* secondary text */
+      --bg:#f7fbff;      /* page */
+      --card:#ffffff;    /* card */
+      --accent:#ff6b3d;  /* accent/cta */
+      --muted:#e6eef7;   /* borders */
+      --radius:16px;
+      --shadow:0 10px 25px rgba(11,34,57,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--text-1);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    .nav-wrap{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--muted)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:42px;width:auto;object-fit:contain}
+    .brand h1{font-size:1.05rem;line-height:1.2;margin:0;font-weight:800;letter-spacing:.6px}
+    .brand small{display:block;font-weight:600;color:var(--brand-2);opacity:.85}
+
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{font-weight:600;color:var(--text-2);padding:8px 6px;border-radius:10px}
+    .menu a:hover{color:var(--brand-2);background:var(--bg)}
+
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;font-weight:700;border:1px solid var(--brand-1);color:#fff;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05)}
+    .btn.secondary{background:#fff;color:var(--brand-2);border-color:var(--muted)}
+
+    /* Hamburger for mobile */
+    .hamb{display:none}
+    .hamb button{all:unset;cursor:pointer;padding:8px;border-radius:12px;border:1px solid var(--muted)}
+    .hamb span{display:block;width:22px;height:2px;background:var(--text-1);margin:5px 3px;border-radius:2px}
+
+    /* Hero */
+    .hero{max-width:1100px;margin:0 auto;padding:64px 18px 36px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero .title{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;margin:0 0 10px;font-weight:900}
+    .hero .subtitle{color:var(--text-2);font-size:1.05rem;margin:0 0 22px}
+    .hero-card{background:var(--card);border:1px solid var(--muted);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 0}
+    .pill{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--muted);border-radius:999px}
+
+    /* Section base */
+    section{padding:28px 18px}
+    .container{max-width:1100px;margin:0 auto}
+    .section-title{font-size:1.6rem;margin:0 0 6px;font-weight:900}
+    .section-sub{color:var(--text-2);margin:0 0 20px}
+
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--muted);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:1.05rem}
+    .card p{margin:0;color:var(--text-2);font-size:.98rem}
+
+    /* Why */
+    .why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .why .card{padding:20px;text-align:center}
+
+    /* Contact */
+    .contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .address{background:var(--card);border:1px solid var(--muted);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .address h4{margin:0 0 6px}
+    .address p{margin:4px 0;color:var(--text-2)}
+    form{display:grid;gap:12px;background:var(--card);border:1px solid var(--muted);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--muted);font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .submit{justify-content:center}
+
+    /* Footer */
+    footer{padding:22px 18px;border-top:1px solid var(--muted);margin-top:22px;background:#fff}
+    .foot{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--text-2)}
+
+    /* Responsive */
+    @media (max-width: 950px){
+      .hero{grid-template-columns:1fr}
+      .hero-list{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .why{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .contact-wrap{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .menu{display:none}
+      .cta{display:none}
+      .hamb{display:block}
+      .menu.open{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:64px;background:#fff;padding:14px;border-bottom:1px solid var(--muted)}
+      .menu.open a{padding:12px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <div class="brand">
+        <!-- Save your logo file next to this HTML as logo.png and it will load -->
+        <img src="images/logo.png" alt="L. N. Solutions Logo" onerror="this.style.display='none'">
+        <div>
+          <h1>L. N. SOLUTIONS</h1>
+          <small>GST • Accounting • Legal</small>
+        </div>
+      </div>
+
+      <div class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="cta">
+        <a class="btn secondary" href="mailto:insolution2025@gmail.com">Email</a>
+        <a class="btn" href="tel:+918249179320">Call 8249179320</a>
+      </div>
+
+      <div class="hamb">
+        <button aria-label="Toggle menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div>
+      <h2 class="title">Your Trusted GST & Legal Partner</h2>
+      <p class="subtitle">We provide end‑to‑end business, tax and compliance services so you can focus on growth.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Get Started</a>
+        <a class="btn secondary" href="https://wa.me/918249179320" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="hero-list">
+        <div class="pill">✅ Timely filings</div>
+        <div class="pill">✅ Expert guidance</div>
+        <div class="pill">✅ Affordable plans</div>
+        <div class="pill">✅ End‑to‑end support</div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <strong>Quick Links</strong>
+      <ul>
+        <li><a href="#services">GST Registration & Filing</a></li>
+        <li><a href="#services">Company & Firm Registration</a></li>
+        <li><a href="#services">Accounting & Audit</a></li>
+        <li><a href="#contact">Project Report & Bank Finance</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h3 class="section-title">About Us</h3>
+      <p>
+        At <strong>L.N SOLUTIONS</strong> we are committed to delivering excellence in accounting and legal consultancy services, offering a comprehensive suite of solutions to support businesses and individuals in navigating complex financial and regulatory landscapes. Established with the mission to bridge the gap between financial accuracy and legal compliance, our firm stands as a trusted partner for clients seeking clarity, confidence, and growth.
+      </p>
+      <p>
+        Our multidisciplinary team comprises seasoned accountants, tax advisors, legal consultants, and compliance professionals with years of experience across diverse industries. We bring together the precision of accounting with the strategic insight of legal counsel to provide integrated services that are not only technically sound but also practical and client-focused.
+      </p>
+      <p>
+        We understand that today’s business environment is fast-evolving and heavily regulated. Whether you are a startup, a growing enterprise, or an established corporation, our services are tailored to meet your unique needs. Our core offerings include:
+      </p>
+      <ul>
+        <li><strong>Accounting & Bookkeeping:</strong> From day-to-day bookkeeping to financial statement preparation and analysis.</li>
+        <li><strong>Taxation Services:</strong> Comprehensive tax planning, filing, and advisory services to minimize tax liabilities while ensuring full compliance.</li>
+        <li><strong>Legal Consultancy:</strong> Corporate law, contracts, compliance, labor law, and dispute resolution.</li>
+        <li><strong>Company Formation & Structuring:</strong> New setups or restructuring with efficiency and foresight.</li>
+        <li><strong>Compliance & Risk Management:</strong> Frameworks to manage risk and ensure governance.</li>
+        <li><strong>Tender Service:</strong> Registrations to returns and tenders with timely support.</li>
+      </ul>
+      <p>
+        What sets us apart is our client-centric approach. At <strong>L.N SOLUTIONS</strong> we view each engagement as a partnership. With confidentiality, professionalism, and ethical standards, we are trusted advisors who help clients make informed decisions and achieve sustainable success.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h3 class="section-title">Our Services</h3>
+      <p class="section-sub">All details pulled from your brochure — perfect for a demo. Content can be edited later.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>GST / PAN / TAN / DSC / MSME Registration</h3>
+          <p>End‑to‑end assistance for new registrations and updates.</p>
+        </div>
+        <div class="card">
+          <h3>Aadhar Registration / Correction</h3>
+          <p>Support for new Aadhaar and updates/corrections.</p>
+        </div>
+        <div class="card">
+          <h3>Company / Firm / Trust Registration</h3>
+          <p>Pvt. Ltd., Public Ltd., Partnership Firm & Trust setup.</p>
+        </div>
+        <div class="card">
+          <h3>Audit, Balance Sheet & IT Returning</h3>
+          <p>Accounting, audits, financial statements & tax returns.</p>
+        </div>
+        <div class="card">
+          <h3>Project Report & Bank Finance</h3>
+          <p>Professional DPRs and documentation for business loans.</p>
+        </div>
+        <div class="card">
+          <h3>Books of Account (Full‑Time / Part‑Time)</h3>
+          <p>Monthly bookkeeping, reconciliation and compliance.</p>
+        </div>
+        <div class="card">
+          <h3>Tender Services</h3>
+          <p>GeM & e‑Tender registration and participation support.</p>
+        </div>
+        <div class="card">
+          <h3>Legal Consultation</h3>
+          <p>Any Civil, Criminal & general legal consultation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section>
+    <div class="container">
+      <h3 class="section-title">Why Choose Us</h3>
+      <div class="why">
+        <div class="card"><h3>Experienced Team</h3><p>Handled registrations, returns and audits across domains.</p></div>
+        <div class="card"><h3>On‑Time Filing</h3><p>Strict tracking so you never miss a due date.</p></div>
+        <div class="card"><h3>Transparent Pricing</h3><p>Clear estimates with no hidden charges.</p></div>
+        <div class="card"><h3>Responsive Support</h3><p>WhatsApp/phone updates and quick turnaround.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container contact-wrap">
+      <div class="address">
+        <h3 class="section-title" style="margin-bottom:10px">Contact Us</h3>
+        <h4>Registered Office</h4>
+        <p>Shop No - 209, 1st Floor, Ananda Plaza Complex,<br>In front of Sun Shine Hospital, Laxmisagar, BBSR</p>
+        <h4>Branch Office</h4>
+        <p>Bada Bazar, Main Road, Ganjam</p>
+        <p><strong>Mobile:</strong> <a href="tel:+918249179320">8249179320</a></p>
+        <p><strong>Email:</strong> <a href="mailto:insolution2025@gmail.com">insolution2025@gmail.com</a></p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); openMailer();">
+        <h3 style="margin:0 0 6px">Quick Enquiry</h3>
+        <input id="name" type="text" placeholder="Your Name" required>
+        <input id="email" type="email" placeholder="Email (optional)">
+        <textarea id="msg" placeholder="Tell us what you need…" required></textarea>
+        <div class="submit">
+          <button class="btn" type="submit">Send Enquiry</button>
+        </div>
+        <small style="color:var(--text-2)">This demo form opens your email app to send us a message.</small>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>© <span id="yr"></span> L. N. Solutions. All rights reserved.</div>
+      <div>
+        <a href="#home">Home</a> • <a href="#services">Services</a> • <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      m.classList.toggle('open');
+    }
+    function openMailer(){
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const msg = encodeURIComponent(document.getElementById('msg').value.trim());
+      const subject = `Enquiry from ${name || 'Website Visitor'}`;
+      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${msg}`;
+      window.location.href = `mailto:insolution2025@gmail.com?subject=${subject}&body=${body}`;
+    }
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
